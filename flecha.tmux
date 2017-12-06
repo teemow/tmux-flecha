@@ -47,9 +47,7 @@ apply_theme() {
   prefix_right=""
   sufix_right=""
 
-  # show host name and IP address on right side of status bar
-  kubecontext_fg="brightblue"
-  kubecontext="#[fg=$kubecontext_fg] K8s: #(kubectl config current-context) "
+  kubecontext="#[fg=$session_fg,bg=$session_bg] #(kubectl config current-context) "
 
   status_right="${separator_right_bold}#[fg=$session_fg,bg=$session_bg,nobold] ${prefix_right}${kubecontext}${sufix_right}${prefix_highlight}"
   tmux set-option -g status-right-length 150
